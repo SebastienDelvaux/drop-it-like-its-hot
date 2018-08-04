@@ -22,19 +22,17 @@ export default class Task extends Component {
       <Draggable
         draggableId={this.props.task.id}
         index={this.props.index}
-        isDragDisabled={isDragDisabled}
-      >
-        {(provided, snapshot) => (
-          <Container
-            {...provided.draggableProps}
-            {...provided.dragHandleProps}
-            innerRef={provided.innerRef}
-            isDragging={snapshot.isDragging}
-            isDragDisabled={isDragDisabled}
-            >
-              {this.props.task.content}
-          </Container>
-        )}
+        isDragDisabled={isDragDisabled}>
+          {(provided, snapshot) => (
+            <Container
+              {...provided.draggableProps}
+              {...provided.dragHandleProps}
+              innerRef={provided.innerRef}
+              isDragging={snapshot.isDragging}
+              isDragDisabled={isDragDisabled}>
+                {this.props.task.content}
+            </Container>
+          )}
       </Draggable>
     );
   }
